@@ -3,6 +3,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.TimeZone;
+
 
 public class TimeConversion {
     public static void main(String[] args) {
@@ -18,6 +20,8 @@ public class TimeConversion {
                 Date dateFomatter = new Date(milliseconds);
 
                 SimpleDateFormat dateFormeddate = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+                dateFormeddate.setTimeZone(TimeZone.getTimeZone("UTC"));
+
                 System.out.println("Data: " + dateFormeddate.format(dateFomatter));
 
                 repeat = false;
